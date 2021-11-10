@@ -1,10 +1,181 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
+{% extends 'base.html.twig' %}
 
-</body>
-</html>
+{% block title %} Profile - User {% endblock %}
+
+{% block body %}
+    <main class="mb-5">
+
+        <section class="container-fluid m-0">
+            <div class="header-bg mb-3">
+                <div class="text-center">
+                    <h1 class="title display-1">Profiler</h1>
+                </div>
+            </div>
+
+        </section>
+
+        <section class="container mt-xl-n150 ">
+
+            <div class="row">
+                <div class="col-3">
+
+                    <div class="card shadow align-content-center text-center p-2" >
+                        <img src="{{ asset('build/images/dummy_profile_image.png') }}" class="card-img-top rounded-circle p-5" alt="profile-image">
+                        <div class="card-body">
+                            <h4 class="card-title">{{ (app.user.prenom) }} {{ (app.user.nom) }}</h4>
+                            <p class="card-text">Développeur PHP</p>
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="col-9">
+                    <div class="card shadow p-5">
+                        <h2 class="pb-2 h2-22 border-bottom " style="width: 150px;">MON PROFIL</h2>
+                        <div class="b-example-divider"></div>
+
+                        <user-profile data-user="{{ app.user.id }}" ></user-profile>
+
+                        {#<div class="border mb-4 p-2">
+                            <div class="float-start">
+                                <h3 class="h3-20">Coordonées</h3>
+                            </div>
+                            <div class="float-end">
+                                <button type="button" class="btn btn-fiord" data-bs-toggle="modal" data-bs-target="#exampleModal" data-bs-whatever="@mdo">
+                                    <i class="bi bi-pencil-square"></i>
+                                </button>
+                            </div>
+                            <br>
+                            <br>
+                            <div class="float-none">
+                                <p>
+                                    {{ (app.user.prenom) }} {{ (app.user.nom) }} <br>
+                                    {{ (app.user.adresse) }} <br>
+                                    {{ (app.user.codepostale) }}, {{ (app.user.ville) }}
+                                </p>
+                            </div>
+
+                            <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                <div class="modal-dialog">
+                                    <div class="modal-content ">
+                                        <div class="modal-header">
+                                            <h5 class="modal-title" id="exampleModalLabel">Coordonées</h5>
+
+                                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                        </div>
+                                        <div class="modal-body px-3">
+
+                                            {{ form_start(userForm) }}
+                                            <div class="row form-group my-3 ">
+
+
+                                                <div class="col">{{ form_row(userForm.prenom) }}</div>
+                                                <div class="col">{{ form_row(userForm.nom) }}</div>
+
+                                            </div>
+                                            <div class="row form-group my-3 ">
+                                                <div class="col">{{ form_row(userForm.email) }}</div>
+                                                <div class="col">{{ form_row(userForm.telephone) }}</div>
+
+                                            </div>
+                                            <div class="row form-group my-3 ">
+                                                <div class="col">{{ form_row(userForm.adresse) }}</div>
+
+
+                                            </div>
+
+                                            <div class="row form-group my-3 ">
+                                                <div class="col">{{ form_row(userForm.codePostale) }}</div>
+                                                <div class="col">{{ form_row(userForm.ville) }}</div>
+                                            </div>
+
+
+
+                                        </div>
+                                        <div class="modal-footer">
+                                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                            <button type="submit" class="btn btn-primary my-3">Enregister</button>
+                                        </div>
+                                        {{ form_end(userForm) }}
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+
+                        <div class="row border mb-4 p-2">
+                            <div class="col">
+                                <h3 class="h3-20">Documents téléchargé</h3>
+                            </div>
+                        </div>
+
+                        <div class="row border mb-4 p-2">
+                            <div class="col">
+                                <h3 class="h3-20">Résumé</h3>
+                            </div>
+                        </div>
+
+                        <div class="row border mb-4 p-2">
+                            <div class="col">
+                                <h3 class="h3-20">Liens</h3>
+                            </div>
+                        </div>
+
+                        <div class="row border mb-4 p-2">
+                            <div class="col">
+                                <h3 class="h3-20">Compétences</h3>
+                            </div>
+                        </div>
+
+                        <div class="row border mb-4 p-2">
+                            <div class="col">
+                                <h3 class="h3-20">Expérience proffessionnelle</h3>
+                            </div>
+                        </div>
+
+                        <div class="row border mb-4 p-2">
+                            <div class="col">
+                                <h3 class="h3-20">Formations</h3>
+                            </div>
+                        </div>
+
+                        <div class="row border mb-4 p-2">
+                            <div class="col">
+                                <h3 class="h3-20">Langues</h3>
+                            </div>
+                        </div>
+
+                        <div class="row border mb-4 p-2">
+                            <div class="col">
+                                <h3 class="h3-20">Certifications</h3>
+                            </div>
+                        </div>
+
+                        <div class="row border mb-4 p-2">
+                            <div class="col">
+                                <h3 class="h3-20">Activités extraproffessionnelle</h3>
+                            </div>
+                        </div>
+
+                        <div class="row border mb-4 p-2">
+                            <div class="col">
+                                <h3 class="h3-20">Informations complementaire</h3>
+                            </div>
+                        </div>#}
+
+
+                    </div>
+
+                </div>
+            </div>
+
+
+
+        </section>
+
+    </main>
+
+
+
+
+{% endblock %}

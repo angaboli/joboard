@@ -1,0 +1,88 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello HomeController!{% endblock %}
+
+{% block body %}
+
+<main class="main">
+
+    <!-- Masthead-->
+    <header class="masthead">
+        <div class="container position-relative">
+            <div class="row justify-content-center">
+                <div class="col-xl-6">
+                    <div class="text-center text-white">
+                        <form class="d-flex">
+                            <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                            <button class="btn btn-fiord" type="submit">Search</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <div class="section py-5 border">
+        <!-- BEGIN container -->
+        <div class="container shadow-sm">
+            <!-- BEGIN row -->
+            <div class="row gx-5">
+                <!-- BEGIN col-3 -->
+                <div class="col-lg-3 d-none d-lg-block">
+                    <!-- BEGIN filter-header -->
+                    <div class="d-flex h6 align-items-center mb-3">
+                        <span>Filter</span>
+                        <a href="#" class="text-decoration-none ms-auto text-gray-600 fw-bold fs-13px">Clear Filters</a>
+                    </div>
+                    <div class="input-group position-relative mb-4">
+                        <input type="text" class="form-control rounded-pill-start bg-gray-200 border-0 px-3 fw-bold" placeholder="Search" />
+                        <button type="button" class="btn bg-gray text-gray-800">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </div>
+                    <!-- END filter-header -->
+                </div>
+                <!-- BEGIN col-9 -->
+                <div class="col-lg-9 ps-lg-5">
+                    <!-- BEGIN result-header -->
+                    <div class="d-flex align-items-center fw-bold text-gray-600 mb-4">
+                        <div>Viewing 1 - 25 of 1,320</div>
+                        <div class="ms-auto d-flex align-items-center">
+                            <span class="me-3">Results per page:</span>
+                            <select class="form-select form-select-sm w-80px">
+                                <option value="">25</option>
+                            </select>
+                        </div>
+                    </div>
+                    <!-- END result-header -->
+
+                    <div class="p-4 bg-gray-200 position-relative border-start border-5 border-warning mb-2">
+                        <div class="fs-16px mb-3 fw-bolder line-h-11">Livestream Digital Operations Lead</div>
+                        <!-- BEGIN row -->
+                        <div class="row">
+                            <!-- BEGIN col-4 -->
+                            <div class="col-4">
+                                <div class="d-flex align-items-center">
+                                    <div class="me-3 w-40px h-40px rounded-2 bg-gray-400 text-gray-600 d-md-flex d-none align-items-center justify-content-center">
+                                        <i class="far fa-fw fa-map fa-lg"></i>
+                                    </div>
+                                    <div>
+                                        <div class="fw-bold text-gray-600 fs-12px line-h-12">Location:</div>
+                                        <div class="fw-bold text-gray-800">Kuala Lumpur</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- END col-4 -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</main>
+
+
+
+
+{% endblock %}
